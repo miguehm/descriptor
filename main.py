@@ -75,7 +75,7 @@ def stitch_images(img1, img2):
     
     if len(good_matches) < 4:
         print("No hay suficientes coincidencias para calcular la homografía.")
-        return None
+        exit(1)
     
     # Extraer las coordenadas de los puntos coincidentes de cada imagen
     pts_img1 = np.float32([ keypoints1[m.queryIdx].pt for m in good_matches ]).reshape(-1, 1, 2)
